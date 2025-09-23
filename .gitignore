@@ -1,0 +1,7 @@
+__pycache__
+.ropeproject
+log.txt
+.DS_STORE
+.ipynb_checkpoints
+ESC50Artifact/
+ESC-50-master/

@@ -1,0 +1,37 @@
+2025-09-23 20:47 - INFO - Starting YAMNet training session
+2025-09-23 20:47 - INFO - Using CUDA
+2025-09-23 20:47 - INFO - NVIDIA GeForce RTX 3050 Laptop GPU
+2025-09-23 20:47 - INFO - ✓ Model initialized successfully
+2025-09-23 20:47 - INFO - ✓ Data loaders created: 11200 train, 2800 val samples
+2025-09-23 20:47 - INFO - Starting training process...
+2025-09-23 20:47 - INFO - Started training
+2025-09-23 20:51 - INFO - Epoch 1/12, Train Loss: 1.5998, Train Acc: 0.3608
+2025-09-23 20:51 - INFO - Epoch 1/12, Val Loss: 13.9245, Val Acc: 0.1346
+2025-09-23 20:51 - INFO - New best model saved with val_acc: 0.1346
+2025-09-23 20:54 - INFO - Epoch 2/12, Train Loss: 1.2923, Train Acc: 0.4904
+2025-09-23 20:55 - INFO - Epoch 2/12, Val Loss: 10.8753, Val Acc: 0.1618
+2025-09-23 20:55 - INFO - New best model saved with val_acc: 0.1618
+2025-09-23 20:58 - INFO - Epoch 3/12, Train Loss: 1.2500, Train Acc: 0.5138
+2025-09-23 20:59 - INFO - Epoch 3/12, Val Loss: 62.7861, Val Acc: 0.2571
+2025-09-23 20:59 - INFO - New best model saved with val_acc: 0.2571
+2025-09-23 21:02 - INFO - Epoch 4/12, Train Loss: 1.1931, Train Acc: 0.5343
+2025-09-23 21:02 - INFO - Epoch 4/12, Val Loss: 79.9458, Val Acc: 0.1454
+2025-09-23 21:06 - INFO - Epoch 5/12, Train Loss: 1.1546, Train Acc: 0.5478
+2025-09-23 21:06 - INFO - Epoch 5/12, Val Loss: 13.6428, Val Acc: 0.1389
+2025-09-23 21:10 - INFO - Epoch 6/12, Train Loss: 1.1166, Train Acc: 0.5629
+2025-09-23 21:10 - INFO - Epoch 6/12, Val Loss: 640.6559, Val Acc: 0.1464
+2025-09-23 21:14 - INFO - Epoch 7/12, Train Loss: 1.0972, Train Acc: 0.5789
+2025-09-23 21:14 - INFO - Epoch 7/12, Val Loss: 2232.2323, Val Acc: 0.1546
+2025-09-23 21:18 - INFO - Epoch 8/12, Train Loss: 1.0550, Train Acc: 0.6107
+2025-09-23 21:18 - INFO - Epoch 8/12, Val Loss: 1711.0884, Val Acc: 0.1750
+2025-09-23 21:22 - INFO - Epoch 9/12, Train Loss: 1.0184, Train Acc: 0.6246
+2025-09-23 21:22 - INFO - Epoch 9/12, Val Loss: 4919.3248, Val Acc: 0.1639
+2025-09-23 21:26 - INFO - Epoch 10/12, Train Loss: 0.9998, Train Acc: 0.6326
+2025-09-23 21:26 - INFO - Epoch 10/12, Val Loss: 2683.1821, Val Acc: 0.1675
+2025-09-23 21:30 - INFO - Epoch 11/12, Train Loss: 0.9846, Train Acc: 0.6432
+2025-09-23 21:30 - INFO - Epoch 11/12, Val Loss: 17637.1915, Val Acc: 0.1568
+2025-09-23 21:33 - INFO - Epoch 12/12, Train Loss: 0.9318, Train Acc: 0.6523
+2025-09-23 21:33 - INFO - Epoch 12/12, Val Loss: 6992.6547, Val Acc: 0.1868
+2025-09-23 21:33 - INFO - Training completed. Runtime: 0:46:04.715103
+2025-09-23 21:33 - INFO - Best validation accuracy: 0.2571
+2025-09-23 21:33 - INFO - ✓ Training completed successfully!
