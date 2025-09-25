@@ -12,6 +12,8 @@ tags:
 | Improving Audio Spectrogram Transformers for Sound Event Detection through Multi-Stage Training | https://arxiv.org/html/2408.00791v1                            |
 | Audio Spectrogram Transformer (fine-tuned on AudioSet)                                          | https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593 |
 | FAST: ==Fast Audio Spectrogram Transformer== \| ICASSP 2025                                     | https://youtu.be/U4h-8lBCpYA                                   |
+| Harmonai Hangouts: LAION-CLAP with Yusong Wu & Ke Chen                                          | https://github.com/LAION-AI/CLAP                               |
+| SonicMaster: Towards Controllable All-in-One Music Restoration and Mastering                    | https://arxiv.org/abs/2508.03448                               |
 
 | Jupyter Notebook              | Link                                                                                                                   |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -47,3 +49,24 @@ modified YAMNet model classifier for 7 classes and cross entropy loss for single
 tried training only on esc50 for out of box reference
 
 current step: using pretrained tensorflow AudioSet YAMNet weights for pytorch and perform classification for esc50artifact
+
+
+| Models to deeply understand   |     |
+| ----------------------------- | --- |
+| YAMNet                        |     |
+| MobileNetV1                   |     |
+| MobileNetV3                   |     |
+| Audio Spectrogram Transformer |     |
+| FAST                          |     |
+| Convolution Free Transformer  |     |
+| PANN                          |     |
+| PaSST                         |     |
+
+we can play with 
+hyperparameters, 
+regularization - l1,l2,dropout, early stopping
+slight variations in chunks before proceeding
+architectural changes
+dataset quality improvement
+dataset is balanced class wise but dataset quality balancing (by listening)
+contrastive learning (clean vs artifact)
