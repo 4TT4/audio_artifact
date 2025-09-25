@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from torchvision.models import mobilenet_v3_large, MobileNet_V3_Large_Weights
 import math
 
-import src.params as params
+import srcv2full.params as params
 
 # conv2d with tensorflow "same" padding
 class Conv2dSame(nn.Conv2d):

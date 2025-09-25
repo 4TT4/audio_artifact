@@ -69,7 +69,8 @@ class YAMNetEngine(torch.nn.Module):
             self.model.train()
             train_loss = 0.0
             correct = 0
-            total = len(train_loader.sampler.indices)
+            total = len(train_loader.dataset)
+            # total = len(train_loader.sampler.indices)
             
             train_iterator = tqdm(train_loader, desc=f"Epoch {epoch + 1}/{num_epochs} [Train]")
             
@@ -112,7 +113,8 @@ class YAMNetEngine(torch.nn.Module):
             
             val_loss = 0.0
             correct = 0
-            total = len(val_loader.sampler.indices)
+            total = len(train_loader.dataset)
+            # total = len(val_loader.sampler.indices)
             
             val_iterator = tqdm(val_loader, desc=f"Epoch {epoch + 1}/{num_epochs} [Val]")
             
