@@ -12,7 +12,7 @@ num_classes = params.NUM_CLASSES  # 7 for ESC50Artifact
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = YAMNet()
-model.load_state_dict(torch.load("checkpoints/yamnet_finetune_esc50artifact.pth", map_location=device))
+model.load_state_dict(torch.load("checkpoints/yamnet_finetune_esc50artifact_frozen.pth", map_location=device))
 model.to(device)
 model.eval()
 
