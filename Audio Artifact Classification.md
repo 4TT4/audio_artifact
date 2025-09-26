@@ -70,3 +70,21 @@ architectural changes
 dataset quality improvement
 dataset is balanced class wise but dataset quality balancing (by listening)
 contrastive learning (clean vs artifact)
+
+When adding other features helps:
+Phase information: Spectrograms discard phase information, but in some cases, phase can contain important cues about audio quality.
+Time-domain details: For detecting artifacts that primarily affect the temporal shape of the waveform (e.g., clicks or clipping), raw waveform analysis can provide additional, direct information.
+Robustness: Some research shows that combining learned features from both spectrograms and raw waveforms can lead to improved performance and greater robustness for specific tasks.
+Completeness: A single feature may fail to represent all characteristics of manipulated audio. Combining multiple features captures information from various perspectives, enhancing model generalizability.
+
+i can try multivariate features
+try EDA using confusion matrix
+
+new update:
+last 2 layers were unfrozen
+spectrogram = spectrogram ** 0.5 this was OFF
+optimizer = torch.optim.Adam([
+            {"params": [p for n, p in self.model.named_parameters() if "layer_12" in n or "layer_13" in n], "lr": 1e-4},
+            {"params": self.model.classifier.parameters(), "lr": 5e-4}
+        ])
+different LR for penultimate layers and classifier

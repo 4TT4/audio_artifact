@@ -60,7 +60,11 @@ class YAMNetEngine(torch.nn.Module):
         # Ensure checkpoint directory exists
         os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
         
-        optimizer = torch.optim.Adam(self.model.parameters(), lr=params.LEARNING_RATE)
+        # optimizer = torch.optim.Adam(self.model.parameters(), lr=params.LEARNING_RATE)
+        optimizer = torch.optim.Adam([
+            {"params": [p for n, p in self.model.named_parameters() if "layer_12" in n or "layer_13" in n], "lr": 1e-4},
+            {"params": self.model.classifier.parameters(), "lr": 5e-4}
+        ])
         criterion = torch.nn.CrossEntropyLoss()
         
         best_val_acc = 0.0

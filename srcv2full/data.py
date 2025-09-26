@@ -9,7 +9,7 @@ class ESC50ArtifactData(torch.utils.data.Dataset):
         self.audio_dir = data_dir + "audio/"
         
         # Map artifact labels (string) -> integer ids
-        self.artifact2id = {lbl: i for i, lbl in enumerate(self.annotations['artifact_label'].unique())}
+        self.artifact2id = {lbl: i for i, lbl in enumerate(sorted(self.annotations['artifact_label'].unique()))}
         self.id2artifact = {i: lbl for lbl, i in self.artifact2id.items()}
         
     def __len__(self):

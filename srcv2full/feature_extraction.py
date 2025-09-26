@@ -91,7 +91,7 @@ class WaveformToMelSpec(torch.nn.Module):
 class LogMelSpecTrans(MelSpectrogram):
     def forward(self, waveform):
         spectrogram = self.spectrogram(waveform)
-        spectrogram = spectrogram ** 0.5
+        spectrogram = spectrogram ** 0.5 # can comment out to match original feature extraction way in yamnet audioset tensorflow
         
         mel_spectrogram = self.mel_scale(spectrogram)
         mel_spectrogram = torch.log(mel_spectrogram + params.LOG_DELTA)

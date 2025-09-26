@@ -12,14 +12,14 @@ num_classes = params.NUM_CLASSES  # 7 for ESC50Artifact
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = YAMNet()
-model.load_state_dict(torch.load("checkpoints/yamnet_finetune_esc50artifact_frozen.pth", map_location=device))
+model.load_state_dict(torch.load("checkpoints/yamnet_finetune_esc50artifact_frozen_-3.pth", map_location=device))
 model.to(device)
 model.eval()
 
 # -----------------------------
 # 2. Load & preprocess an audio file
 # -----------------------------
-audio_path = "ESC50Artifact/audio/5-263831-A-6_hiss.wav"  # replace with your audio file
+audio_path = "ESC50Artifact/audio/5-262641-A-15_hiss.wav"  # replace with your audio file
 waveform, sr = torchaudio.load(audio_path)
 
 # Resample if needed
