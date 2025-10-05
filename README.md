@@ -12,3 +12,66 @@ pip install -r requirements.txt
 ./download_esc50.sh
 python3 example.py ./ESC-50-master ./log.txt ./ckpt.pt
 ```
+
+
+🎧 Sampling Rate Mismatch
+Yes, you're correct:
+
+AudioSet uses 48 kHz sampling rate.
+
+ESC-50 and likely your ESC50Artifact dataset use 16 kHz (or 44.1 kHz originally, but often downsampled to 16 kHz for efficiency).
+
+Why this matters:
+
+YAMNet is pretrained on 48 kHz data. Feeding it 16 kHz audio without proper resampling or feature alignment can degrade performance.
+
+If your pipeline skips resampling or uses mismatched mel spectrogram parameters, the model may misinterpret the input.
+
+🧪 Dataset Integrity
+You mentioned:
+
+Programmatically injected artifacts with single-label annotations, even though clips may contain multiple artifacts.
+
+This introduces label noise, which can:
+
+Confuse the model during training.
+
+Lead to poor generalization and unstable validation loss.
+
+Suppress accuracy, especially if the model sees conflicting patterns.
+
+Fixes:
+
+Consider multi-label classification if artifacts co-occur.
+
+Audit a subset of the dataset manually to verify label fidelity.
+
+Use label smoothing or soft targets to mitigate noise.
+
+📉 Metric Effectiveness
+If you're using accuracy as your primary metric:
+
+It may be misleading for imbalanced or multi-label tasks.
+
+A model predicting only the majority class could still score high accuracy.
+
+Better metrics:
+
+F1-score (macro or weighted): balances precision and recall.
+
+Mean Average Precision (mAP): especially good for multi-label setups.
+
+Confusion matrix: reveals misclassification patterns.
+
+Precision/Recall curves: show threshold sensitivity.
+
+🛠 Model Setup Suggestions
+Resample your audio to 48 kHz before feeding it to YAMNet.
+
+Normalize your mel spectrogram parameters to match AudioSet preprocessing.
+
+Try CNN14 or Wavegram-Logmel-CNN14 if YAMNet continues to underperform.
+
+Freeze fewer layers or use gradual unfreezing to retain pretrained knowledge while adapting to your domain.
+
+READ PAPERS & architecture of PANNs and improve dataset quality first
